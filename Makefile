@@ -15,7 +15,7 @@ NAME    = libftprintf.a
 SRC     =   ft_print_s.c	ft_printf.c			ft_print_p.c\
 		    ft_putnbr_fd.c	ft_putchar_fd.c		ft_putstr_fd.c\
 		    ft_print_Xx.c	ft_print_di.c		ft_print_u.c\
-		    ft_write.c
+		    ft_write.c		ft_strchr.c\
 
 OBJ = $(patsubst %.c, %.o,$(SRC))
 
@@ -33,7 +33,7 @@ fclean : clean
 re : fclean all
 
 test :
-	gcc -g -fsanitize=address -Wall -Werror -Wextra main.c ft_print_s.c ft_printf.c ft_printf.h ft_print_p.c ft_putnbr_fd.c ft_putchar_fd.c ft_putstr_fd.c ft_print_Xx.c ft_print_di.c ft_print_u.c ft_write.c  && ./a.out
+	gcc -g -fsanitize=address -Wall -Werror -Wextra main.c ft_print_s.c ft_printf.c ft_printf.h ft_print_p.c ft_putnbr_fd.c ft_putchar_fd.c ft_putstr_fd.c ft_print_Xx.c ft_print_di.c ft_print_u.c ft_write.c ft_strchr.c  && ./a.out
 
 .PHONY : all clean fclean re test
 

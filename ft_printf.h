@@ -17,17 +17,18 @@
 # include <stdio.h>
 # include <stdarg.h>
 
-int					ft_print_di(va_list arg);
-int					ft_print_p(va_list arg);
-int					ft_print_s(va_list arg);
-int					ft_print_u(va_list arg);
-int					ft_print_Xx(char **mass, va_list arg);
-int					ft_printf(const char *format, ...);
-int					ft_parsing_flags(char **mass, va_list arg);
-int					ft_print_c(va_list arg);
-void				ft_putchar_fd(char c, int fd);
-void				ft_putnbr_fd(int n, int fd);
-void				ft_putstr_fd(char *s, int fd);
-int					ft_write (char *str);
+int		ft_print_di(va_list arg);
+int		ft_print_p(va_list arg);
+int		ft_print_s(va_list arg);
+int		ft_print_u(va_list arg);
+int		ft_print_Xx(char **mass, va_list arg);
+int		ft_printf(const char *format, ...);
+int		ft_parsing_flags(char **mass, va_list arg);
+int		ft_print_c(va_list arg);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
+int		ft_write (char *str);
+char	*ft_strchr(const char *s, int c);
 
 #endif

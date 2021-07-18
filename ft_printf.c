@@ -26,6 +26,7 @@ int	ft_parsing_flags(char **mass, va_list arg)
 {
 	int	nb;
 
+	nb = 0;
 	if (**mass == 'd' || **mass == 'i')
 		nb = ft_print_di(arg);
 	if (**mass == 'c')
@@ -40,6 +41,9 @@ int	ft_parsing_flags(char **mass, va_list arg)
 		nb = ft_print_Xx(mass, arg);
 	if (**mass == '%')
 		nb = write(1, "%", 1);
+	if ((ft_strchr("cspdiuxX%", **mass)) == NULL)
+		return (0);
+	(*mass)++;
 	return (nb);
 }
 
@@ -52,15 +56,16 @@ int	ft_printf(const char *format, ...)
 	lenght = 0;
 	mass = (char *)format;
 	va_start(arg, format);
+	if (mass == NULL)
+		return (0);
 	while (*mass)
 	{
 		if (*mass == '%')
 		{
 			mass++;
 			lenght = lenght + ft_parsing_flags(&mass, arg);
-			mass++;
 		}
-		else if (*mass)
+		if (*mass && *mass != '%')
 			lenght = lenght + write(1, mass++, 1);
 	}
 	va_end(arg);
